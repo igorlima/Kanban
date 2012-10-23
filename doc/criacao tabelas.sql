@@ -1,0 +1,17 @@
+DROP TABLE IF EXISTS data; 
+CREATE TABLE data
+  (
+     id         INT NOT NULL AUTO_INCREMENT,
+     name       VARCHAR(15) NOT NULL,
+     content    VARCHAR(3000) NOT NULL,
+     PRIMARY KEY (id),
+     UNIQUE KEY name (name)
+  )
+ENGINE=InnoDB
+DEFAULT CHARSET=latin1
+AUTO_INCREMENT=1;
+
+
+ALTER TABLE data ADD burndown VARCHAR(3000);
+ALTER TABLE data ADD productbacklog VARCHAR(6000);
+SHOW COLUMNS FROM data;

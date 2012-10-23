@@ -1,0 +1,29 @@
+1;Banco de Dados (A2SI019);;;;
+;Alterar as tabelas de tipos e propriedades para que os campos tx sejam UNIQUES;1;;TIPO_COMPONENTE.tx_tipo_componente, TIPO_PROPRIEDADE.tx_tipo_propriedade, TIPO_EVENTO.tx_tipo_evento, PROPRIEDADE_EVENTO.tx_propriedade_evento;true
+;Alterar nome da tabela VALOR_COMPONENTE e adicionar campo idTrDocOrientacaoBasica;1;;Alterar de VALOR_COMPONENTE para RESPOSTA_COMPONENTE;true
+;Criar tabelas para salvar multiplas respostas por componente (PROPRIEDADE_RESPOSTA e VALOR_PROPRIEDADE_RESPOSTA);1;;PROPRIEDADE_RESPOSTA = {idPropriedadeResposta, txPropriedadeResposta (unique), dataCadastro, flAtivo}. VALOR_PROPRIEDADE_RESPOSTA = {idValorPropriedadeResposta, txValorPropriedadeResposta, idPropriedadeResposta, idRespostaComponente, dtCadastro, flAtivo } ;true
+;Criar tabelas para integração (TERMO_REFERENCIA e TR_DOC_ORIENTACAO_BASICA);1;;TERMO_REFERENCIA = {idTermoReferencia, txTermoReferencia, idTipoDocumento (FK mbpu), idComponente (FK), dtCadastro, flAtivo }. TR_DOC_ORIENTACAO_BASICA = { idTrDocOrientacaoBasica, idCaracterizacao (FK mbpu), idTermoReferencia, dtCadastro, flAtivo };true
+;Alterar Dicionário de Dados;8;;Acrescentar ao dicionário de dados as alterações;true
+;Criar glossário para o dicionário de dados;16;;Detalhamento e descrição para cada tipo e propriedade utilizado na regra de negócio. Exemplo: o que é 'step', 'stepSet',...;true
+;;;;;
+2;Serviço JAVA;;;;
+;Mapeamento das novas entidades;3;;Novas entidades: RESPOSTA_COMPONENTE, PROPRIEDADE_RESPOSTA e VALOR_PROPRIEDADE_RESPOSTA;true
+;Mapeamento das views que contém os dados do empreendedor e empreendimento;3;;;false
+;Implementar regra para salvar e recuperar as respostas dos componentes, mantendo o mesmo tipo retorno usado anteriormente;24;;;false
+;Criar simulacao de multiplos usuários;12;;;true
+;Criar serviço de autenticação de usuário;8;;;true
+;Criar serviço para prover os dados do empreendedor e empreendimento;4;;;false
+;;;;;
+3;Cadastramento de Formulários;;;;
+;Alteração das tabelas dinâmicas;12;;i) Retirar a opção de edição e exclusão das linhas estáticas, ii) Retirar as linhas em branco das tabelas dinâmicas;false
+;;;;;
+4;Interface;;;;
+;Verificar eventuais erros no Internet Explorer;8;;;false
+;Exibir nome do usuário logado;2;;Não exibir mais nome estático;true
+;Criação de tela de login;2;;;true
+;Carregar dados do empreendedor e empreendimento;6;;;false
+;;;;;
+5;Relatório;;;;
+;Alterar cor do Relatório;1;;;true
+;;;;;
+6;Planning;6;;;true
